@@ -33,7 +33,7 @@ public class ProblemSet2 {
 		System.out.println("Type First and Last Name followed by pressing \"Enter\"");
 		
 		String fNamelName = in.nextLine();
-		System.out.println("Hello," + " " + fNamelName);
+		System.out.println("\nHello," + " " + fNamelName);
 	}
 	
 	public void gradeMe() {
@@ -46,8 +46,8 @@ public class ProblemSet2 {
 		System.out.println("Please enter your test grade.");
 		float testGrade = in.nextFloat();
 
-		double average = ((hwGrade * .15) + (quizGrade * .30) + (testGrade * .55)) / 3.00;
-		
+		double average1 = (((testGrade / 100.0000) * .5500) + ((quizGrade / 100.0000) * .3000) + ((hwGrade / 100.0000) * .1500));
+		double average = average1 * 100;
 		System.out.println("Your average is " + average);
 		
 	}
@@ -60,18 +60,18 @@ public class ProblemSet2 {
 		int numStudents = in.nextInt();
 		
 		float numBus = ((numStudents + numTeachers)/47);
-		float extra = numBus % 47;
-		System.out.println("There will be " + numBus + " buses required with " + (numBus-1) + " buses full and " + extra + "people on the last bus.");
+		double extra = (numStudents + numTeachers) % 47.000;
+		System.out.println("There will be " + numBus +  " " + "buses required with " + (numBus % (numTeachers + numStudents)) + " " + "buses full and " + extra + " people on a left over not filled bus.");
 		
   
 	}
 	
 	public void info() {
 		System.out.println("Enter first name.");
-		String fName1 = in.nextLine();
+		String fName1 = in.next();
 
-		System.out.println("Enter last name.");
-		String lName1 = in.nextLine();
+		System.out.println("\nEnter last name.");
+		String lName1 = in.next();
 
 		System.out.println("Enter grade.");
 		int grade1 = in.nextInt();
