@@ -37,14 +37,29 @@ public class ProblemSet2 {
 	}
 	
 	public void gradeMe() {
-		System.out.println("Please enter your homework grade.");
-		float hwGrade = in.nextFloat();
+		System.out.println("Please enter your 1st homework grade.");
+		float hwGrade1 = in.nextFloat();
+		System.out.println("Please enter your 2nd homework grade.");
+		float hwGrade2 = in.nextFloat();
+		System.out.println("Please enter your 3rd homework grade.");
+		float hwGrade3 = in.nextFloat();
+		float hwGrade = (hwGrade1 + hwGrade2 + hwGrade3) / 3;
 		
-		System.out.println("Please enter your quiz grade.");
-		float quizGrade = in.nextFloat();
+		System.out.println("Please enter your 1st quiz grade.");
+		float quizGrade1 = in.nextFloat();
+		System.out.println("Please enter your 2nd quiz grade.");
+		float quizGrade2 = in.nextFloat();
+		System.out.println("Please enter your 3rd quiz grade.");
+		float quizGrade3 = in.nextFloat();
+		float quizGrade = (quizGrade1 + quizGrade2 + quizGrade3) / 3;
 		
-		System.out.println("Please enter your test grade.");
-		float testGrade = in.nextFloat();
+		System.out.println("Please enter your 1st test grade.");
+		float testGrade1 = in.nextFloat();
+		System.out.println("Please enter your 2nd test grade.");
+		float testGrade2 = in.nextFloat();
+		System.out.println("Please enter your 3rd test grade.");
+		float testGrade3 = in.nextFloat();
+		float testGrade = (testGrade1 + testGrade2 + testGrade3) / 3;
 
 		double average1 = (((testGrade / 100.0000) * .5500) + ((quizGrade / 100.0000) * .3000) + ((hwGrade / 100.0000) * .1500));
 		double average = average1 * 100;
@@ -59,9 +74,12 @@ public class ProblemSet2 {
 		System.out.println("Enter number of students.");
 		int numStudents = in.nextInt();
 		
-		float numBus = ((numStudents + numTeachers)/47);
+		float numBus = ((numStudents + numTeachers) / (float)47);
 		double extra = (numStudents + numTeachers) % 47.000;
-		System.out.println("There will be " + numBus +  " " + "buses required with " + (numBus % (numTeachers + numStudents)) + " " + "buses full and " + extra + " people on a left over not filled bus.");
+		if (numBus % 1 != 0) {
+		    numBus++;
+		}
+		System.out.println("There will be " + ((int)numBus)  +  " " + "buses required with " + (int)(((numBus - 1) % (numTeachers + numStudents))) + " " + "buses full and " + (int)(extra) + " people on a left over not filled bus.");
 		
   
 	}
